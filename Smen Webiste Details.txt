@@ -1,0 +1,54 @@
+Home (Referance - https://www.allohealth.com/)
+
+About (Referance - https://www.allohealth.com/about ) we dont need the team details in the about page we need the Our Vision, Our Mission, Our Values
+Our Doctors (Content Reference - https://www.allohealth.com/doctors)
+Our Therapists (Content Reference - https://www.allohealth.com/therapy)
+
+Treatments or Conditions we treat **(We need a good and impressive replacement for this in the menu)**
+Erectile Dysfunction (Content Reference - https://www.allohealth.com/treatments/erectile-dysfunction)
+Premature Ejaculation (Content Reference - https://www.allohealth.com/treatments/premature-ejaculation)
+Delayed Ejaculation (Content Reference - https://www.allohealth.com/treatments/delayed-ejaculation)
+
+Diagnostics 
+  Penile Doppler (Content Reference - https://mensclinicgroup.com/diagnostics/penile-doppler/)
+  USG Abdomen (Content Reference - https://mensclinicgroup.com/diagnostics/usg-abdomen/)
+  USG Scrotum and Doppler (Content Reference - https://mensclinicgroup.com/diagnostics/usg-scrotum-and-doppler/)
+  Uroflowmetry (Content Reference - https://www.tenderpalm.com/uroflowmetry-test-for-male-in-lucknow-india)
+  EEG (Content Reference - https://my.clevelandclinic.org/health/diagnostics/9656-electroencephalogram-eeg)
+  ECG (Content Reference - https://my.clevelandclinic.org/health/diagnostics/16953-electrocardiogram-ekg)
+  Nerve Stimulation Test (NCV/NCS) (Content Reference - https://my.clevelandclinic.org/health/treatments/24821-nerve-conduction-study)
+
+Therapies  (https://www.allohealth.com/therapy)
+
+Erectile Dysfunction (Content Reference - https://www.allohealth.com/therapy/erectile-dysfunction)
+Premature Ejaculation (Content Reference - https://www.allohealth.com/therapy/premature-ejaculation)
+Delayed Ejaculation (Content Reference - https://www.allohealth.com/therapy/delayed-ejaculation)
+Vaginismus (Content Reference -https://www.allohealth.com/therapy/vaginismus)
+Porn Addiction (Content Reference - https://www.allohealth.com/therapy/porn-addiction)
+Compulsive Masturbation (Content Reference - https://www.allohealth.com/therapy/compulsive-masturbation)
+Unconsummated Relationship (Content Reference - https://www.allohealth.com/therapy/unconsummated-relationship)
+Low Desire (Content Reference - https://www.allohealth.com/therapy)
+Female Sexual Arousal Disorder (FSAD) (Content Reference - https://www.allohealth.com/therapy/female-sexual-arousal-disorders)
+Female Anorgasmia (Content Reference - https://www.allohealth.com/therapy/female-anorgasmia)
+Bride Checkup Shorts (Content Reference - https://www.metromaleclinic.com/premarital-health-check-mandatory-tests-to-be-done-before-marriage/)
+Couple Sex Problems (Content Reference - https://www.allohealth.com/treatments/relationship-concerns)
+Shock Wave Therapy (Content Reference - https://mensclinicgroup.com/specialservice/shockwave-therapy/)
+High Intensity focused electro magnetic stimulation therapy (Content Reference - https://abdiwaluyo.com/en/health-info/hifem-high-intensity-focused-electro-magnetic-therapy/)
+Rigi Scan (Content Reference - https://www.metromaleclinic.com/rigiscan-what-is-it/)
+Biofeedback SOT (Content Reference - https://my.clevelandclinic.org/health/treatments/13354-biofeedback)
+Stem cells Therapy (Content Reference - https://stemcellstherapyindia.com/erectile-dysfunction-impotence-stem-cell-therapy-treatment-india.php)
+Psycho Sexual Consoling (Content Reference - https://mensclinicgroup.com/specialservice/psychosexual-counselling/)
+
+
+Contact Us (Content Reference - )
+
+
+https://www.allohealth.com/(Main Reference)
+https://mensclinicgroup.com/(2nd Reference)
+
+Need to highlight the Non-Invasive and Confidentiality in the website
+Latest Technology
+Evidence Based Treatment
+One stop solution for erectile disfunction and premature ejections
+Equipment(Evidence Based Treatments - in home page)
+In every page we have to ADD the section why we use this for services pages, therapy, diagnostics
