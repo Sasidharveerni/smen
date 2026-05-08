@@ -21,8 +21,13 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Our Doctors", path: "/doctors" },
-  { label: "Our Therapists", path: "/therapists" },
+  {
+    label: "Our Team",
+    children: [
+      { label: "Our Doctors", path: "/doctors" },
+      { label: "Our Therapists", path: "/therapists" },
+    ],
+  },
   {
     label: "Conditions We Heal",
     children: [
@@ -180,7 +185,7 @@ function DesktopNavItem({
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className={`flex items-center gap-1 text-xs font-medium uppercase tracking-[0.2em] font-display bg-transparent border-none cursor-pointer font-body py-2 transition-colors duration-300 ease-out ${textColorClass}`}
+          className={`flex items-center gap-1 text-xs font-medium uppercase tracking-[0.12em] font-display bg-transparent border-none cursor-pointer font-body py-2 transition-colors duration-300 ease-out ${textColorClass}`}
           aria-expanded={open}
           aria-haspopup="true"
         >
@@ -196,7 +201,7 @@ function DesktopNavItem({
       ) : (
         <Link
           to={item.path!}
-          className={`relative text-xs font-medium uppercase tracking-[0.2em] font-display py-2 transition-colors duration-300 ease-out no-underline ${textColorClass}`}
+          className={`relative text-xs font-medium uppercase tracking-[0.12em] font-display py-2 transition-colors duration-300 ease-out no-underline ${textColorClass}`}
         >
           {item.label}
         </Link>
@@ -297,7 +302,7 @@ function MobileNavItem({
   const location = useLocation();
   const hasChildren = !!item.children;
 
-  const labelClass = `text-xs font-medium uppercase tracking-[0.2em] font-display ${
+  const labelClass = `text-xs font-medium uppercase tracking-[0.12em] font-display ${
     isActive ? "text-gold-500" : "text-navy-900"
   }`;
 
@@ -461,24 +466,24 @@ export default function Navbar() {
         }`}
       >
         <div
-          className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300 ease-out ${
-            scrolled ? "h-16" : "h-20"
+          className={`max-w-[1440px] mx-auto px-8 flex items-center justify-between transition-all duration-300 ease-out ${
+            scrolled ? "h-20" : "h-28"
           }`}
         >
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0 mr-6">
             <img
               src="/smen-logo.png"
               alt="SMEN"
               className={`w-auto transition-all duration-300 ${
-                scrolled ? "h-9" : "h-10"
+                scrolled ? "h-14" : "h-20"
               }`}
             />
           </Link>
 
           {/* Desktop Nav */}
           <nav
-            className="hidden xl:flex items-center gap-6"
+            className="hidden xl:flex items-center gap-5"
             aria-label="Main navigation"
           >
             {NAV_ITEMS.map((item) => (
@@ -546,7 +551,7 @@ export default function Navbar() {
                   <img
                     src="/smen-logo.png"
                     alt="SMEN"
-                    className="h-8 w-auto"
+                    className="h-12 w-auto"
                   />
                 </Link>
                 <HamburgerButton

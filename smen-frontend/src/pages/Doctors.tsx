@@ -21,27 +21,7 @@ const doctors: Doctor[] = [
     experience: "17+ years",
     bio: "Senior sexual health specialist with 17 years of clinical experience and 300+ patients treated. Expert in evidence-based psychiatric and sexual medicine. Speaks English, Hindi & Telugu.",
   },
-  {
-    name: "Dr. Anil Sharma",
-    initials: "AS",
-    specialty: "Sexual Medicine Specialist",
-    experience: "12+ years",
-    bio: "Board-certified in sexual medicine with expertise in hormonal therapies and penile rehabilitation protocols for lasting results.",
-  },
-  {
-    name: "Dr. Priya Mehta",
-    initials: "PM",
-    specialty: "Urologist & Pelvic Health Expert",
-    experience: "10+ years",
-    bio: "Expert in pelvic floor disorders and ejaculatory dysfunction. Combines diagnostic precision with compassionate, patient-centered care.",
-  },
-  {
-    name: "Dr. Sanjay Gupta",
-    initials: "SG",
-    specialty: "Andrologist & Fertility Specialist",
-    experience: "18+ years",
-    bio: "Leading andrologist recognized for groundbreaking work in male fertility preservation and advanced shockwave therapy techniques.",
-  },
+  
 ];
 
 const whyReasons = [

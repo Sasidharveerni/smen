@@ -84,7 +84,7 @@ const RevealHeading: FC<{
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={textRevealParent}
-        className="flex flex-wrap"
+        className="flex flex-wrap justify-center"
       >
         {words.map((word, i) => (
           <span key={i} className="overflow-hidden inline-block mr-[0.3em]">
@@ -324,6 +324,21 @@ const Home: FC = () => {
           </span>
         </motion.div>
 
+        {/* Full-width hero background image */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0.3 }}
+          className="absolute inset-0 z-[1] pointer-events-none"
+        >
+          <img
+            src="/images/hero-couple.jpeg"
+            alt="Restored confidence and happiness"
+            className="w-full h-full object-cover opacity-70"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-950/50 to-navy-950/60" />
+        </motion.div>
+
         {/* Hero content */}
         <motion.div
           style={{ opacity: heroContentOpacity, y: heroContentY }}
@@ -366,6 +381,7 @@ const Home: FC = () => {
               Explore Treatments
             </Link>
           </motion.div>
+
         </motion.div>
 
         {/* Scroll indicator */}
@@ -407,13 +423,33 @@ const Home: FC = () => {
       {/* ═══════════════════ 3. CONDITIONS WE HEAL ═══════════════════ */}
       <section className="bg-white py-24 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Section heading */}
-          <div className="text-center mb-20">
-            <RevealHeading
-              text="Conditions We Heal"
-              className="text-3xl md:text-5xl font-heading text-navy-950 mb-6 justify-center"
-            />
-            <ExpandingLine className="max-w-[80px] mx-auto" />
+          {/* Section heading with consultation image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+            <div>
+              <RevealHeading
+                text="Conditions We Heal"
+                className="text-3xl md:text-5xl font-heading text-navy-950 mb-6 justify-center lg:justify-start"
+              />
+              <ExpandingLine className="max-w-[80px] mx-auto lg:mx-0" />
+              <ScrollReveal>
+                <p className="mt-6 text-base md:text-lg text-navy-700/60 leading-relaxed font-body max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                  Our specialists provide discreet, evidence-based care for the most common sexual health conditions affecting men.
+                </p>
+              </ScrollReveal>
+            </div>
+            <ScrollReveal className="hidden lg:block">
+              <div className="relative">
+                <div className="rounded-2xl overflow-hidden shadow-2xl shadow-navy-950/10 border border-navy-950/5">
+                  <img
+                    src="/images/consultation.jpeg"
+                    alt="Doctor consultation"
+                    className="w-full h-[300px] object-cover"
+                  />
+                </div>
+                {/* Gold accent bar */}
+                <div className="absolute -bottom-3 -left-3 w-24 h-1 bg-gold-500 rounded-full" />
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Cards */}
@@ -458,38 +494,133 @@ const Home: FC = () => {
         ref={whyRef}
         className="relative bg-navy-950 py-28 md:py-40 px-6 overflow-hidden"
       >
+        {/* Background image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src="/images/equipment-screen.jpeg"
+            alt=""
+            className="w-full h-full object-cover opacity-10"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-navy-950/70" />
+        </div>
+
         {/* Watermark */}
         <motion.div
           style={{ y: whyWatermarkY }}
-          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[1]"
         >
           <span className="text-[15vw] md:text-[8vw] font-display text-gold-500/[0.06] uppercase tracking-[0.1em] whitespace-nowrap">
             Why SMEN?
           </span>
         </motion.div>
 
-        <div className="relative z-10 max-w-4xl mx-auto">
-          {whyItems.map((item, i) => (
-            <WhyItem
-              key={item.num}
-              item={item}
-              isLast={i === whyItems.length - 1}
-            />
-          ))}
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          {/* Left: Why items */}
+          <div className="max-w-xl">
+            <ScrollReveal>
+              <span className="text-xs uppercase tracking-[0.3em] text-gold-500 font-body mb-4 block">
+                Why Choose Us
+              </span>
+            </ScrollReveal>
+            {whyItems.map((item, i) => (
+              <WhyItem
+                key={item.num}
+                item={item}
+                isLast={i === whyItems.length - 1}
+              />
+            ))}
+          </div>
+
+          {/* Right: Tech device showcase */}
+          <ScrollReveal className="hidden lg:block">
+            <div className="relative">
+              {/* Primary image — medical device frame */}
+              <div className="relative rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl shadow-black/40 bg-navy-900">
+                {/* Device status bar */}
+                <div className="flex items-center justify-between px-4 py-2 bg-navy-800/80 border-b border-white/5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                    <span className="text-[10px] text-green-400/70 font-body uppercase tracking-wider">Live</span>
+                  </div>
+                  <span className="text-[10px] text-white/30 font-body tracking-wide">SMEN Diagnostics</span>
+                  <div className="flex items-center gap-1">
+                    <span className="w-5 h-[3px] rounded-full bg-gold-500/40" />
+                    <span className="w-5 h-[3px] rounded-full bg-gold-500/40" />
+                    <span className="w-3 h-[3px] rounded-full bg-gold-500/20" />
+                  </div>
+                </div>
+                <img
+                  src="/images/clinic-tech.jpeg"
+                  alt="Advanced diagnostic monitoring"
+                  className="w-full h-[320px] object-cover"
+                />
+              </div>
+
+              {/* Floating MRI/scanner image */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="absolute -bottom-8 -right-6 w-[55%] rounded-xl overflow-hidden border border-gold-500/20 shadow-xl shadow-black/30"
+              >
+                <img
+                  src="/images/equipment-screen.jpeg"
+                  alt="MRI and advanced scanning equipment"
+                  className="w-full h-[180px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 to-transparent" />
+                <div className="absolute bottom-3 left-3 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold-500" />
+                  <span className="text-[9px] text-white/60 font-body">Advanced Scanning</span>
+                </div>
+              </motion.div>
+
+              {/* Gold accent corner */}
+              <div className="absolute -top-4 -left-4 w-16 h-px bg-gold-500" />
+              <div className="absolute -top-4 -left-4 w-px h-16 bg-gold-500" />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* ═══════════════════ 5. EVIDENCE-BASED TREATMENTS ═══════════════════ */}
       <section className="bg-cream py-24 md:py-32 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <RevealHeading
-              text="Evidence-Based Treatments"
-              className="text-3xl md:text-5xl font-heading text-navy-950 mb-6 justify-center"
-            />
-            <ExpandingLine className="max-w-[80px] mx-auto" />
+        <div className="max-w-7xl mx-auto">
+          {/* Top: heading + featured image */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-end mb-16">
+            <div className="lg:col-span-3">
+              <RevealHeading
+                text="Evidence-Based Treatments"
+                className="text-3xl md:text-5xl font-heading text-navy-950 mb-6 justify-center lg:justify-start"
+              />
+              <ExpandingLine className="max-w-[80px] mx-auto lg:mx-0" />
+              <ScrollReveal>
+                <p className="mt-6 text-base md:text-lg text-navy-700/60 leading-relaxed font-body max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+                  Our clinic combines cutting-edge medical technology with proven therapeutic approaches, delivering treatments that are backed by clinical evidence.
+                </p>
+              </ScrollReveal>
+            </div>
+            {/* Featured tech image in screen frame */}
+            <ScrollReveal className="lg:col-span-2 hidden lg:block">
+              <div className="rounded-xl overflow-hidden border border-navy-950/8 shadow-lg bg-white">
+                <div className="flex items-center justify-between px-3 py-2 bg-navy-950 border-b border-white/5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                    <span className="text-[9px] text-green-400/60 font-body uppercase tracking-wider">Active</span>
+                  </div>
+                  <span className="text-[9px] text-white/30 font-body tracking-wide">Treatment Bay</span>
+                </div>
+                <img
+                  src="/images/clinic-tech.jpeg"
+                  alt="Advanced treatment technology"
+                  className="w-full h-[220px] object-cover"
+                />
+              </div>
+            </ScrollReveal>
           </div>
 
+          {/* Treatment cards */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -501,7 +632,7 @@ const Home: FC = () => {
               <motion.div key={t.title} variants={fadeUp}>
                 <Link
                   to={t.link}
-                  className="group block bg-white border border-navy-950/8 p-8 h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                  className="group block bg-white border border-navy-950/8 p-8 h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg rounded-lg"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <h4 className="text-lg md:text-xl font-heading text-navy-950 group-hover:text-gold-600 transition-colors duration-300">
@@ -523,50 +654,71 @@ const Home: FC = () => {
 
       {/* ═══════════════════ 6. HOW IT WORKS ═══════════════════ */}
       <section className="bg-white py-24 md:py-32 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <RevealHeading
-              text="How It Works"
-              className="text-3xl md:text-5xl font-heading text-navy-950 mb-6 justify-center"
-            />
-            <ExpandingLine className="max-w-[80px] mx-auto" />
-          </div>
-
-          {/* Steps */}
-          <div className="relative">
-            {/* Connecting line (desktop) */}
-            <div className="hidden md:block absolute top-[36px] left-[10%] right-[10%]">
-              <ExpandingLine className="w-full" />
-            </div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10"
-            >
-              {processSteps.map((step) => (
-                <motion.div
-                  key={step.num}
-                  variants={fadeUp}
-                  className="text-center"
-                >
-                  {/* Gold number circle */}
-                  <div className="w-[72px] h-[72px] rounded-full bg-navy-950 border border-gold-500/40 flex items-center justify-center mx-auto mb-6">
-                    <span className="text-lg font-heading text-gold-500">
-                      {step.num}
-                    </span>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+            {/* Left: doctor image in device frame */}
+            <ScrollReveal className="lg:col-span-2 hidden lg:block">
+              <div className="sticky top-32">
+                <div className="relative">
+                  <div className="rounded-2xl overflow-hidden shadow-2xl shadow-navy-950/10 border border-navy-950/5">
+                    <img
+                      src="/images/doctor-team.jpeg"
+                      alt="Our specialist team"
+                      className="w-full h-[480px] object-cover object-top"
+                    />
                   </div>
-                  <h4 className="text-lg font-heading text-navy-950 mb-2">
-                    {step.title}
-                  </h4>
-                  <p className="text-sm text-navy-700/60 leading-relaxed font-body max-w-[220px] mx-auto">
-                    {step.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
+                  {/* Floating badge */}
+                  <div className="absolute -bottom-4 -right-4 bg-navy-950 rounded-xl px-5 py-3 shadow-lg border border-gold-500/20">
+                    <span className="text-gold-500 font-heading text-sm">4-Step Process</span>
+                  </div>
+                  {/* Gold accent */}
+                  <div className="absolute -top-3 -left-3 w-20 h-px bg-gold-500" />
+                  <div className="absolute -top-3 -left-3 w-px h-20 bg-gold-500" />
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Right: steps */}
+            <div className="lg:col-span-3">
+              <div className="mb-12 text-center lg:text-left">
+                <RevealHeading
+                  text="How It Works"
+                  className="text-3xl md:text-5xl font-heading text-navy-950 mb-6 justify-center lg:justify-start"
+                />
+                <ExpandingLine className="max-w-[80px] mx-auto lg:mx-0" />
+              </div>
+
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={staggerContainer}
+                className="space-y-8"
+              >
+                {processSteps.map((step) => (
+                  <motion.div
+                    key={step.num}
+                    variants={fadeUp}
+                    className="flex gap-6 items-start group"
+                  >
+                    {/* Gold number circle */}
+                    <div className="w-[60px] h-[60px] rounded-full bg-navy-950 border border-gold-500/40 flex items-center justify-center shrink-0 group-hover:border-gold-500 transition-colors duration-300">
+                      <span className="text-base font-heading text-gold-500">
+                        {step.num}
+                      </span>
+                    </div>
+                    <div className="pt-1">
+                      <h4 className="text-lg md:text-xl font-heading text-navy-950 mb-2">
+                        {step.title}
+                      </h4>
+                      <p className="text-sm md:text-base text-navy-700/60 leading-relaxed font-body">
+                        {step.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -576,10 +728,20 @@ const Home: FC = () => {
         ref={ctaRef}
         className="relative bg-navy-950 py-28 md:py-36 px-6 overflow-hidden"
       >
+        {/* Background image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src="/images/happy-man.jpeg"
+            alt=""
+            className="w-full h-full object-cover opacity-15"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/70 to-navy-950/80" />
+        </div>
+
         {/* SMEN watermark */}
         <motion.div
           style={{ y: ctaWatermarkY }}
-          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[1]"
         >
           <span className="text-[20vw] md:text-[14vw] font-display text-white/[0.03] uppercase tracking-[0.15em]">
             SMEN
