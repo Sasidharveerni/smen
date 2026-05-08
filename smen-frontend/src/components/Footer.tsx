@@ -67,7 +67,7 @@ export default function Footer() {
               <img
                 src="/smen-logo.png"
                 alt="SMEN"
-                className="mb-5 h-10 w-auto"
+                className="mb-5 h-20 w-auto"
               />
               <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gold-500">
                 Advanced Men's Sexual Health
